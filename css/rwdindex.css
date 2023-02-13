@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+@media screen and (max-width:1024px) {
+
+
+    #section .article1 .slide .slide_text { 
+        position:static; 
+        transform:translateY(0%); 
+        color:#000; 
+    } 
+
+    .article1 .slide .slide_text a { border: 1px solid #000; } 
+
+    .article1 .slick-dots { position:absolute; bottom:300px; 
+        width:100%; text-align:center;
+    }
+
+
+}
+
+@media screen and (max-width:768px) {
+
+    /* article2 구역 */
+    .article2 li { height:220px; 
+        float:left; width:49%; 
+        margin-right:2%; 
+        background-size:cover; 
+        background-position:center; 
+        position:relative;
+        text-align:center; 
+        margin-bottom:20px; 
+    }
+    .article2 li:nth-child(2) { 
+        background-image:url(../img/what2.jpg); 
+        margin-right: 0; }
+
+    .article2 li > div > p { padding: 20px 0; 
+        line-height:1.5; font-size:14px; 
+        display:none; 
+    }
+    .article2 li > div > h3 { font-size: 24px; 
+        line-height: 32px; font-weight: 500;
+        margin-bottom:20px; 
+    }
+
+    .article2 li:hover > div { bottom:25px; }
+
+
+    /* section의 article3 구역  */
+.article3 { padding:50px 0; 
+    background:url(../img/intro_bg.jpg) no-repeat center top;
+    background-size:cover;
+    background-attachment: fixed; 
+    /* 패럴렉스 이미지 : 스크롤시 배경이미지 고정스타일 */
+    margin-top:100px; 
+    color:#fff;
+    text-align:center; 
+}
+
+    .article3 h2 { font-size:25px !important }
+
+    /* section의 article4 구역 */
+    .article4 ul { overflow:hidden }
+    .article4 ul li { float:left; width:49%; margin-right:2%;
+        border:1px solid #999;
+        margin-bottom:20px; text-align:center;
+    }
+    .article4 ul li:nth-child(3n) { margin-right:2%  }
+    .article4 ul li:nth-child(2n) { margin-right:0%  }
+    .article4 li p { font-size:14px; margin:25px; 
+        line-height:1.5; display:none }
+
+    /* section의 article5 구역 */
+    .article5 { padding:30px 0; 
+        margin-top:50px; 
+        border-top:1px solid #ddd 
+    }
+    .article5 .row { overflow:hidden }
+    .article5 .row > div { width:100%; float:left; }    
+
+
+    .cs_board { padding-right:0px; }
+    .cs_center { border:1px solid #ddd;
+        padding:30px 30px; 
+        text-align:center; 
+        margin:30px 0; 
+    }
+    .cs_center li::before { content:"" }
+
+    .cs_movie { padding-left:0px; 
+        text-align:center; 
+    }
+
+}

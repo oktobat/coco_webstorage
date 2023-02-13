@@ -1,0 +1,285 @@
+@charset "utf-8";
+
+#section .article1 { position:relative; }
+#section .slide { position:relative; }
+#section .slide .img { 
+    height:40vw; 
+    background-size:cover; 
+    background-position:center; 
+}
+#section .slide1 .img { background-image:url(../img/main_img1.jpg) }
+#section .slide2 .img { background-image:url(../img/main_img2.jpg) }
+#section .slide3 .img { background-image:url(../img/main_img3.jpg) }
+#section .article1 .slide .slide_text { 
+    position:absolute; top:50%;
+    transform:translateY(-50%); 
+    color:#fff; text-align:center;
+    width:100%; left:0; 
+} 
+#section .article1 .slide .slide_text h2 { 
+    font-size: 42px; font-weight: 800; color:#000;
+    transform:translateY(-100%); opacity:0; 
+    transition:all 0.5s 0.6s;
+}
+#section .article1 .slide.slick-current.slick-active .slide_text h2 {
+    transform:translateY(0%); opacity:1;
+}
+
+#section .article1 .slide.slide1 .slide_text h2 {
+    color:#f00
+}
+#section .article1 .slide.slide2 .slide_text h2 {
+    color:orange
+}    
+
+.article1 .slide .slide_text p {
+    font-size: 16px;line-height: 24px;
+    margin:30px 0; 
+    transform:translateY(100%); opacity:0; 
+    transition:all 0.5s 0.6s;
+}    
+.article1 .slide.slick-current.slick-active .slide_text p {
+    transform:translateY(0%); opacity:1;
+}
+
+
+.article1 .slide .slide_text a { 
+    display: inline-block; padding: 10px 35px;
+    border: 1px solid #fff; 
+    font-size: 15px; }    
+.article1 .slide .slide_text a:hover {
+    background: rgba(255,255,255,0.3)
+}
+.article1 .slick-arrow {
+    position:absolute; 
+    /* top:50%; transform:translateY(-50%); */
+    font-size:70px; color:#fff; border:none
+}
+.article1 .slick-prev { left:50px; z-index:9999 }
+.article1 .slick-next { right:50px; }
+.article1 .slick-dots { position:absolute; bottom:30px; 
+    width:100%; text-align:center;
+}
+.article1 .slick-dots li { display:inline-block; margin:0 5px;
+    width:94px; height:2px; background:rgba(255, 255, 255, 0.5);
+    position:relative; 
+}
+.article1 .slick-dots li:nth-child(1)::before {
+    content:'사전구매1'; position:absolute; bottom:10px; left:0;
+    width:100%; text-align:center; color:#fff; 
+}
+.article1 .slick-dots li:nth-child(2)::before {
+    content:'사전구매2'; position:absolute; bottom:10px; left:0;
+    width:100%; text-align:center; color:#fff; 
+}
+.article1 .slick-dots li:nth-child(3)::before {
+    content:'사전구매3'; position:absolute; bottom:10px; left:0;
+    width:100%; text-align:center; color:#fff; 
+}
+.article1 .slick-dots li button { border:none; 
+    width:0px; height:2px; background:#fff;  
+    position:absolute; top:0; left:0; 
+    text-indent:-9999px; overflow:hidden; }
+.article1 .slick-dots li.slick-active button {
+    animation:btnani 3s both; }
+@keyframes btnani {
+    0% { width:0px }
+    100% { width:94px }
+}
+
+
+/* section의 article2 구역 */
+#section h2 { color: #000; font-size: 36px; 
+    line-height: 42px; font-weight: 700;
+    padding:80px 0 10px; text-align:center; 
+}
+.article2 > p, .article4 > p  { 
+    padding-bottom: 40px; text-align:center; 
+    line-height:1.5em 
+}
+
+.article2 ul { overflow:hidden; }
+.article2 li { height:520px; 
+    float:left; width:24%; 
+    margin-right:1.3333%; 
+    background-size:cover; 
+    background-position:center; 
+    position:relative; opacity:0; 
+    transition:all 0.3s 0s
+}
+.article2 li::before { content:'';
+    position:absolute; top:0; left:0; right:0; bottom:0;
+    background:rgba(0,0,0,0.5); opacity:0; 
+    transition:all 0.4s
+}
+.article2 li:hover::before { opacity:1; }
+.article2 li:nth-child(1) { 
+    background-image:url(../img/what1.jpg); transform:translateX(-100%)}
+.article2 li:nth-child(2) { 
+    background-image:url(../img/what2.jpg); transform:translateX(-100%); }
+.article2 li:nth-child(3) { 
+    background-image:url(../img/what3.jpg); transform:translateX(100%); }
+.article2 li:nth-child(4) { 
+    background-image:url(../img/what4.jpg); margin-right:0%; transform:translateX(100%); }
+
+.article2.on li:nth-child(1) { transform:translateX(0%); opacity:1; transition:all 1s 0s }
+.article2.on li:nth-child(2) { transform:translateX(0%); opacity:1; transition:all 1s 0s }
+.article2.on li:nth-child(3) { transform:translateX(0%); opacity:1; transition:all 1s 0s }
+.article2.on li:nth-child(4) { transform:translateX(0%); opacity:1; transition:all 1s 0s }    
+
+
+
+.article2 li > div {
+    position:absolute; bottom:25px; left:25px; 
+    right:25px; color:#fff; transition:all 0.4s
+}
+.article2 li:hover > div { bottom:100px; }
+.article2 li > div > h3 { font-size: 24px; 
+    line-height: 32px; font-weight: 500; }
+.article2 li > div > p { padding: 20px 0; 
+    line-height:1.5; font-size:14px; }
+.article2 li > div > a {  padding: 10px 40px;
+    display:inline-block;
+    border: 1px solid rgba(255,255,255,0.5); 
+    font-size: 11px; transition:all 0.4s }
+.article2 li > div > a:hover {
+    background: rgba(255,255,255,0.3);}
+
+
+/* section의 article3 구역  */
+.article3 { padding:100px 0; 
+    background:url(../img/intro_bg.jpg) no-repeat center top;
+    background-size:cover;
+    background-attachment: fixed; 
+    /* 패럴렉스 이미지 : 스크롤시 배경이미지 고정스타일 */
+    margin-top:100px; 
+    color:#fff;
+    text-align:center; 
+}
+.article3 h2 {  padding-top:0px !important; 
+    color:#fff !important; 
+    word-break:keep-all;  /* 단어잘림 허용안함 */
+    line-height:1.2em !important; 
+}
+.article3 p { padding: 15px 0 25px; word-break:keep-all;
+    line-height:1.2em;
+}
+.article3 a { font-size:13px; padding:10px 30px; 
+    border: 1px solid rgba(255,255,255,0.5);
+    display:inline-block;
+}
+.article3 a:hover {background: rgba(255,255,255,0.3);}
+
+/* section의 article4 구역 */
+.article4 ul { overflow:hidden }
+.article4 ul li { float:left; width:32%; margin-right:2%;
+    border:1px solid #999;
+    margin-bottom:20px; text-align:center;
+    transform:scale(0.5); opacity:0; 
+    transition:all 0.3s 0s;
+}
+.article4.on ul li:nth-child(1) { transition-delay:0s }
+.article4.on ul li:nth-child(2) { transition-delay:0.3s }
+.article4.on ul li:nth-child(3) { transition-delay:0.6s }
+.article4.on ul li:nth-child(4) { transition-delay:0.9s }
+.article4.on ul li:nth-child(5) { transition-delay:1.2s }
+.article4.on ul li:nth-child(6) { transition-delay:1.5s }
+.article4.on ul li { transform:scale(1); opacity:1; 
+    transition:all 1s }
+
+
+
+.article4 ul li:nth-child(3n) { margin-right:0%  }
+.article4 li > div { position:relative; overflow:hidden }
+.article4 li > div::before {
+    content:''; position:absolute; top:0; left:0; right:0;
+    bottom:0;  background:rgba(0,0,0,0);
+    transition:all 0.4s;
+}
+.article4 li:hover > div::before {
+     background:rgba(0,0,0,0.5); z-index:9; 
+}
+.article4 li > div img { transition:all 0.4s }
+.article4 li:hover > div img { transform:scale(1.2) }
+.article4 li .zoom { position:absolute; 
+    top:50%; transform:translateY(-50%);
+    left:0; right:0; 
+    color:#fff; font-size:30px; opacity:0; 
+    transition:all 0.4s; z-index:10; 
+}
+.article4 li:hover .zoom { opacity:1; }
+.article4 li h4 { font-size:17px; margin:25px; 
+    font-weight:bold }
+.article4 li p { font-size:14px; margin:25px; 
+    line-height:1.5 }
+
+/* section의 article5 구역 */
+.article5 { padding:30px 0; 
+    margin-top:50px; 
+    border-top:1px solid #ddd 
+}
+.article5 .row { overflow:hidden }
+.article5 .row > div { width:33.33%; float:left; }
+
+.cs_board { padding-right:30px; }
+.cs_board .tabmenu { overflow:hidden;  
+    border-bottom:1px solid #ddd  }
+.cs_board .tabmenu li { float:left; 
+    border:1px solid #ddd; 
+    border-bottom:none;
+    padding:10px 20px; cursor:pointer;
+}
+.cs_board .tabmenu li.active {
+    background:#ddd; color:orangered;
+}
+.cs_board .contents table { font-size:14px;  }
+.cs_board .contents col:nth-child(1) { width:auto }
+.cs_board .contents col:nth-child(2) { width:100px }
+
+.cs_board .contents td { 
+    border-bottom:1px solid #ddd;
+    padding:9px 5px; }
+.cs_board .contents td:nth-child(1) {
+    white-space:nowrap; overflow:hidden;
+    text-overflow: ellipsis; 
+    /* 
+       위의 속성을 사용할 때는
+       reset.css에서 table에 table-layout:fixed 속성을 확인할것 
+    */
+}
+.cs_board .contents td:nth-child(2) {  text-align:right } 
+.cs_board .contents > div { position:relative; display:none }
+.cs_board .contents > div.active { display:block  }
+.cs_board .contents .more {
+    position:absolute; bottom:100%; right:0; 
+    padding:5px; background:#ddd; margin-bottom:5px;
+    border-radius:3px; 
+}
+
+.cs_center { border-left:1px solid #ddd;
+    border-right:1px solid #ddd; 
+    padding:0 30px; 
+}
+.cs_center h4 {color:#000; font-size:20px; 
+    line-height:28px; padding-bottom:15px; 
+    font-weight:500;}
+.cs_center li { font-size:13px; line-height:24px; }    
+.cs_center li.tel_num {
+    color:#ed5c20; font-size:30px; line-height:36px; font-weight:700; padding-bottom:10px; }
+.cs_center li::before { content:"ㆍ" }
+.cs_center li.cs-btn::before, 
+.cs_center li.tel_num::before {display:none;}
+.cs_center li.cs-btn { text-align:center; }
+.cs_center li.cs-btn a {
+    display: inline-block; width: 46%; margin: 1%;
+    margin-top:20px; 
+    border-radius: 3px; padding: 10px; font-size: 14px;
+    text-align: center; color: #FFF; }
+.cs_center li.cs-btn a:nth-child(1) {
+        background: #787878; }
+.cs_center li.cs-btn a:nth-child(2) {
+        background: #001f60; }    
+.cs_center li.tel_num i { transform:scale(0.7) }        
+
+.cs_movie { padding-left:30px; }
+
