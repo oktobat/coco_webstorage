@@ -40,10 +40,8 @@ $(window).on('resize', function(){
 
 
 $(window).on('load', function(){
-
-    if ( sessionStorage.getItem('refresh') ) {
-        $('.introAni').removeClass('on')
-    } else {
+    
+    if ( !sessionStorage.getItem('refresh') ) {
         sessionStorage.setItem('refresh', 'yes')
         $('.introAni').addClass('on')
         let count = 0;
@@ -55,12 +53,12 @@ $(window).on('load', function(){
                 $('.introAni').animate({
                     left:'-100%'
                 }, 500, function(){
-                    $(this).hide()
+                    $(this).removeClass('on')
                 })
             }
             $('.introAni div').eq(1).text(count+'%')
         }
-    }
+    } 
 
     $('html').animate({
         scrollTop:0
@@ -72,10 +70,9 @@ $(window).on('load', function(){
         transform:`translateY(${imgh}px)`,
     })
 
+
     let objString = localStorage.getItem('objkey') 
-    if ( !objString ) {
-        $('.popup').addClass('on')
-    } else {
+    if ( objString ) {
         const obj = JSON.parse(objString)
         if ( Date.now()>obj.expire ) {
             $('.popup').addClass('on')
@@ -83,6 +80,8 @@ $(window).on('load', function(){
         } else {
             $('.popup').removeClass('on')
         }
+    } else {
+        $('.popup').addClass('on')
     }
 
 
@@ -176,5 +175,4 @@ $('.close button').on('click', function(){
     } 
     $('.popup').removeClass('on')
 })
-
 

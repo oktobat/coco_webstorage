@@ -80,7 +80,7 @@ $('.article4 ul li .zoom a:first-child').on('click', function(){
     modal += `<a href="${href}" target="_blank">`
     modal += `<img src="${src}" alt="">`
     modal += `</a>`
-    modal += `<button type="button"><i class="fas fa-times"></i></button>`
+    modal += `<button type="button">닫기</button>`
     modal += `</div>`
     modal += `</div>`
     $('body').append(modal)
@@ -92,36 +92,20 @@ $('.article4 ul li .zoom a:first-child').on('click', function(){
         height:'100%',
         background:'rgba(0,0,0,0.5)'
     })
-
-    if ( $('html').hasClass('pc')) {
-        $('.imgbox').css({
-            position:'absolute',
-            width:'60vw',
-            top:'50%',
-            left:'50%',
-            transform:'translate(-50%, -50%)'
-        })
-    } else {
-        $('.imgbox').css({
-            position:'absolute',
-            width:'80vw',
-            top:'50%',
-            left:'50%',
-            transform:'translate(-50%, -50%)'
-        })
-    }
-
+    $('.imgbox').css({
+        position:'absolute',
+        width:'700px',
+        top:'50%',
+        left:'50%',
+        transform:'translate(-50%, -50%)'
+    })
     $('.imgbox button').css({
         position:'absolute',
-        top:'-10px',
-        right:'-10px',
-        background:'#fff',
-        color:'#000',
-        width:'30px',
-        height:'30px',
-        borderRadius:'50%',
-        fontSize:'20px',
-        border:'none'
+        top:'0',
+        right:'0',
+        background:'#000',
+        color:'#fff',
+        padding:'5px 10px'
     })
 
     return false
